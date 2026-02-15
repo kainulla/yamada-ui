@@ -9,5 +9,17 @@
     "types": ["vitest/globals", "@vitest/browser/providers/playwright"]
   },
   "include": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
-  "exclude": ["node_modules", "trace", "dist", "coverage", "storybook-static"]
+  "exclude": [
+    "node_modules",
+    "trace",
+    "dist",
+    "coverage",
+    "storybook-static",
+    "**/chart/line-chart.namespace.ts",
+    // "**/chart/chart.tsx",
+    "**/chart/cartesian-chart.tsx",
+    "**/chart/index.ts",
+    "**/chart/line-chart.tsx",
+    "**/chart/line-chart.stories.tsx"
+  ]
 }
