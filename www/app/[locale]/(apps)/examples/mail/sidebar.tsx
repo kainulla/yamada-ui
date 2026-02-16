@@ -44,20 +44,18 @@ interface SidebarProps {
 
 export function Sidebar({ collapsed }: SidebarProps) {
   return (
-    <VStack gap="0" h="full">
-      <Header
-        justifyContent={
-          collapsed ? "center" : { base: "flex-start", xl: "center" }
-        }
-        ms={{ base: collapsed ? "0" : "sm", xl: "0" }}
-      >
+    <VStack alignItems="flex-start" gap="0" h="full">
+      <Header ms="1" overflow="hidden">
         <CloudIcon fontSize="3xl" />
 
-        {!collapsed ? (
-          <Heading as="h3" size="lg" display={{ base: "inline", xl: "none" }}>
-            Yamada UI
-          </Heading>
-        ) : null}
+        <Heading
+          as="h3"
+          size="lg"
+          display={collapsed ? "none" : { base: "inline", xl: "none" }}
+          whiteSpace="nowrap"
+        >
+          Yamada UI
+        </Heading>
       </Header>
 
       <VStack as="nav" gap="0" separator={<Separator />}>
@@ -108,7 +106,7 @@ function SidebarItem({
   const showNum = num && num > 0
 
   return (
-    <HStack as="li" justifyContent={collapsed ? "center" : "flex-start"}>
+    <HStack as="li" justifyContent="flex-start">
       {collapsed ? (
         <Tooltip
           content={
@@ -136,7 +134,7 @@ function SidebarItem({
           variant={isSelected ? "solid" : "ghost"}
           display={{ base: "flex", xl: "center" }}
           justifyContent="flex-start"
-          px={{ base: "2", xl: "0" }}
+          px={{ base: "7px", xl: "0" }}
           startIcon={
             <Icon
               color={isSelected ? "mono.contrast" : "fg.muted"}
